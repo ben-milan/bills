@@ -1,0 +1,18 @@
+body {
+    background-color: #2a2d30;
+}
+
+.center {
+    width: 300px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.form-control::placeholder {
+    color: white;
+    opacity: 1;
+}
