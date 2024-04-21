@@ -12,6 +12,18 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.center-div-main {
+    border: 1px solid red;
+    width: 75%;
+    height: 75%;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .not-auth {
     width: 500px;
     text-align: center;
