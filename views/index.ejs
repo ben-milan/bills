@@ -12,7 +12,24 @@
     <h1 class="center text-light">Hello there! <br> This is going to be the main page.</h1>
 
     <div class="center-div-main text-light">
-        
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nr.</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Due by</th>
+                    <th scope="col">Preview</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>           
+        </table>
     </div>
+    <script>
+        const emailFromBack = "<%= email %>";
+        const pwFromBack = "<%= pw %>";
+    </script>
+    <a href="" class="button-main-pos"><button type="submit" class="btn btn-primary rounded-10" style="margin-top: 10px; border-radius: 20px; width: 150px;">Add Bill</button></a>
 </body>
+<script src="../src/getData.js"></script>
 </html>

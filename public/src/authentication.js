@@ -26,7 +26,7 @@ router.use(session({
 
 router.get("/", (req, res) => {
     if (req.session.auth === "authenticated") {
-        res.sendFile(homePage)
+        res.render("index", { email: req.session.email, pw: req.session.pw})
     } else {
         res.redirect("/login")
     }

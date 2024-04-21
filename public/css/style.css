@@ -13,13 +13,22 @@ body {
 }
 
 .center-div-main {
-    border: 1px solid red;
     width: 75%;
     height: 75%;
+    overflow: hidden;
     text-align: center;
     margin: 0;
     position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-main-pos {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 91%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
