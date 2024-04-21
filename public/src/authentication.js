@@ -6,6 +6,7 @@ const userCreds = require("../data/user_credentials.json")
 
 const loginPage = path.join(__dirname, "../web/login.html")
 const homePage = path.join(__dirname, "../web/index.html")
+const signupPage = path.join(__dirname, "../web/signup.html")
 
 const router = express.Router()
 
@@ -54,9 +55,17 @@ router.post("/login", (req, res) => {
             req.session.pw = pw
             res.status(202).redirect("/")
         } else {
-            res.status(403).sendFile(loginPage)
+            res.status(307).redirect("/signup")
         }
         
+    }
+})
+
+router.get("/signup", (req, res ) => {
+    if (req.session.auth !== "authenticated") {
+        res.status(200).sendFile(signupPage)
+    } else {
+        res.status(200).sendFile(homePage)
     }
 })
 
