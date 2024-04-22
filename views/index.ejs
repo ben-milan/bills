@@ -11,8 +11,6 @@
     <title>Bills</title>
 </head>
 <body>
-    <h1 class="center text-light">Hello there! <br> This is going to be the main page.</h1>
-
     <div class="center-div-main text-light">
         <table class="table table-dark table-striped">
             <thead>
@@ -27,20 +25,18 @@
             </thead>
             <tbody id="table-body">
                 <tr id="table-row">
-                    <th scope="row"></th>
-                    <td></td>
-                    <td><strong>Total:</strong></td>
-                    <td id="total"></td>
-                    <td></td>
-                    <td></td>
                 </tr>
             </tbody>           
         </table>
+        <div class="table-overlay" style="background-color: #212529; padding: 10px 0 40px 0;">
+            <strong class="text-overlay">Total:</strong>
+            <strong id="total" class="number-overlay"></strong>
+        </div>
     </div>
     <script>
         const emailFromBack = "<%= email %>";
         const pwFromBack = "<%= pw %>";
     </script>
-    <a href="" class="button-main-pos"><button type="submit" class="btn btn-primary rounded-10" style="margin-top: 10px; border-radius: 20px; width: 150px;">Add Bill</button></a>
+    <a href="/create" class="button-main-pos"><button type="submit" class="btn btn-primary rounded-10" style="margin-top: 10px; border-radius: 20px; width: 150px;">Add Bill</button></a>
 </body>
 </html>

@@ -21,6 +21,32 @@ body {
     position: absolute;
 }
 
+.table-overlay {
+    position: absolute;
+    top: 84%;
+    left: 0;
+    right: 0;
+}
+
+.number-overlay {
+    position: absolute;
+    top: 23%;
+    left: 23%;
+    right: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 20%;
+    left: -12%;
+    right: 0;
+}
+
+.total-style {
+    border-radius: 20px;
+    padding: 15px; 
+} 
+
 .center-div-main {
     width: 75%;
     height: 75%;

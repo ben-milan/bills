@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
             for(let i=0; i<data_for_total.length; i++) {  
                 total += data_for_total[i].amount;
             }
+            
+            const roundedTotal = total.toFixed(2);
             const newTotal = document.getElementById("total")
-            newTotal.innerHTML = `<strong><u>${total}</u></strong>` 
+            newTotal.innerHTML = `<strong><u>${roundedTotal}</u></strong>` 
         
     })
 })
