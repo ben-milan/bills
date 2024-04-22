@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const data_for_usr = data.filter((entry) => String(entry.user) === String(emailFromBack));
 
             for(let i=0; i<data_for_usr.length; i++) {
+                
 
                 const newTableRow = document.createElement("tr")
         
                 const newID = document.createElement("th")
                 newID.setAttribute("scope", "row")
+                newID.classList.add("id")
                 newID.innerText = String(data_for_usr[i].id)
         
                 const newTitle = document.createElement("td")
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const newSwitchButton = document.createElement("button")
                 newSwitchButton.type = "button"
                 newSwitchButton.style = "padding: 15px; border-radius: 20px"
-                newSwitchButton.classList.add("btn", "btn-danger")
+                newSwitchButton.classList.add("btn", "btn-danger", "status")
                 newSwitch.appendChild(newSwitchButton)
 
                 newTableRow.appendChild(newID);
