@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
                 const newDate = document.createElement("td")
                 newDate.innerText = String(data_for_usr[i].due_by)
-        
+                
+                const newAmount = document.createElement("td")
+                newAmount.innerText = String(data_for_usr[i].amount)
+
                 const newDownload = document.createElement("td")
                 const newLink = document.createElement("a")
                 newLink.href = String(data_for_usr[i].file_path)
@@ -25,15 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 newLink.innerText = "Bill Preview"
                 newDownload.appendChild(newLink)
                 
-                //Add a Switch for when the Bill is Paid look Bootstrap
+                const newSwitch = document.createElement("td")
+                const newSwitchButton = document.createElement("button")
+                newSwitchButton.type = "button"
+                newSwitchButton.style = "padding: 15px; border-radius: 20px"
+                newSwitchButton.classList.add("btn", "btn-danger")
+                newSwitch.appendChild(newSwitchButton)
 
                 newTableRow.appendChild(newID);
                 newTableRow.appendChild(newTitle);
                 newTableRow.appendChild(newDate);
+                newTableRow.appendChild(newAmount)
                 newTableRow.appendChild(newDownload);
+                newTableRow.appendChild(newSwitch)
         
                 const currentTableBody = document.getElementById("table-body")
-                currentTableBody.appendChild(newTableRow)
+                const existingRow = document.getElementById("table-row")
+                currentTableBody.insertBefore(newTableRow, existingRow)
             }
         })
         .catch(err => console.error("Error fetching JSON:", err))

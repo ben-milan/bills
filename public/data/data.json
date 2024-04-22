@@ -4,6 +4,7 @@
         "title": "Salt Rechnung",
         "due_by": "2024-08-29",
         "file_path": "../files/rechnung_00.pdf",
+        "amount": 123.20, 
         "id": 1
     },
     {
@@ -11,6 +12,7 @@
         "title": "Steuer Rechnung",
         "due_by": "2024-11-17",
         "file_path": "../files/rechnung_01.pdf",
+        "amount": 75.95, 
         "id": 2
     },
     {
@@ -18,6 +20,7 @@
         "title": "Steuer Rechnung",
         "due_by": "2024-11-17",
         "file_path": "../files/rechnung_01.pdf",
+        "amount": 20.15, 
         "id": 2
     }
 ]

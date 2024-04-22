@@ -12,6 +12,15 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.center-switches {
+    border: 1px solid red;
+    overflow: hidden;
+    text-align: center;
+    left: 92%;
+    margin: 0;
+    position: absolute;
+}
+
 .center-div-main {
     width: 75%;
     height: 75%;
