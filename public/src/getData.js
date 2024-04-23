@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const newSwitchButton = document.createElement("button")
                 newSwitchButton.type = "button"
                 newSwitchButton.style = "padding: 15px; border-radius: 20px"
+                newSwitchButton.id = String(data_for_usr[i].id)
                 newSwitchButton.classList.add("btn", "btn-danger", "status")
                 newSwitch.appendChild(newSwitchButton)
 
