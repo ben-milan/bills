@@ -13,8 +13,8 @@ router.delete("/delete", (req, res) => {
 
     updatedData = JSON.stringify(req.body, null, 2)
     fs.writeFileSync("./public/data/data.json", updatedData)
-
     res.status(200)
+    // refresh the site
 
 })
 
