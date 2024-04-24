@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Data:", data_without_usr)
 
                 fetch("/delete", {
-                    method: "POST",
+                    method: "DELETE",
                     headers: {
                         "Content-Type": "application/json"
                     },
