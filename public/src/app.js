@@ -1,7 +1,7 @@
 const express = require("express")
 
 const authController = require("./authentication.js")
-const entryController = require("./entry_management.js")
+const entryController = require("./entryManagement.js")
 
 const app = express()
 const port = 3000

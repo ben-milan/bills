@@ -2,6 +2,10 @@ const express = require("express")
 const session = require("express-session")
 const data = require("../data/data.json")
 const fs = require("fs")
+const path = require("path")
+
+const createPage = path.join(__dirname, "../web/create.html")
+
 
 const router = express.Router()
 
@@ -26,6 +30,14 @@ router.delete("/delete/:id", (req, res) => {
         res.status(200).json({Success: "Data deleted and updated successfully."})
     } else {
         res.status(404).send(`Data with id [${id}] has not been found.`)
+    }
+})
+
+router.get("/create", (req, res) => {
+    if (req.session.auth === "authenticated") {
+        res.status(201).sendFile(createPage)
+    } else {
+        res.status(307).redirect("/login")
     }
 })
 

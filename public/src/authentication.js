@@ -111,7 +111,6 @@ router.get("/logout", (req, res) => {
     
     if(req.session.auth === "authenticated") {
         req.session.auth = null
-        console.log(req.session.auth)
         res.redirect("/login")
     } else {
         res.redirect("/login")
