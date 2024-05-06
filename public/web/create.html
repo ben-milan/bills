@@ -10,17 +10,32 @@
     <title>Create Bill</title>
 </head>
 <body>
-    <h1 class="center text-light">Here is everything for creating a bill</h1>
     <form action="/create" method="post">
-        <label for="input-file" class="center" id="drop-area">
-            <input type="file" accept="" id="input-file" hidden>
-            <div id="img-view">
-                <img src="../img/icon.png">
-                <p>Drag and Drop or click here <br> to upload a bill</p>
+        
+        <div class="center-create-form">
+            <label for="" class="text-light title" style="width: 100%;"><h4>Title</h4>
+                <input type="text" name="title" style="text-align: center;" class="form-control datepicker" placeholder="Write an awsome title..." required>
+            </label>
+            <div class="form-datepicker" style="width: 100%;">
+                <label for="datepicker" class="text-light" ><h5>Date</h5>
+                    <input type="date" id="datepicker" min="2020-08-29" max="2100-08-29" name="date" class="form-control datepicker" required>
+                </label>
+            
+                <label for="amount" class="text-light " style="margin-left: 39.9%;"><h5>Amount</h5>
+                    <input id="amount" min="2020-08-29" max="2100-08-29" name="amount" class="form-control datepicker" placeholder="0.00" style="text-align: center;" required>
+                </label>
             </div>
-        </label>
+
+            <label for="input-file" class="drag-n-drop" id="drop-area">
+                <input type="file" accept="" id="input-file" hidden required>
+                <div id="img-view" class="text-light">
+                    <img src="../img/icon.png">
+                    <p>Drag and Drop or click here <br> to upload a bill</p>
+                </div>
+            </label>
+            <button type="submit" class="bill-btn-pos btn btn-primary rounded-10" style="margin-top: 10px; border-radius: 20px; width: 150px;">Add Bill</button>
+        </div>
     </form>
-</div>
 </body>
 </html>
 
