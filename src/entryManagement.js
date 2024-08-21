@@ -1,8 +1,10 @@
 const express = require("express")
 const session = require("express-session")
-const data = require("../data/data.json")
+const data = require("../public/data/data.json")
 const fs = require("fs")
 const path = require("path")
+const crypto = require("crypto")
+
 
 const createPage = path.join(__dirname, "../web/create.html")
 
@@ -39,6 +41,27 @@ router.get("/create", (req, res) => {
     } else {
         res.status(307).redirect("/login")
     }
+})
+
+router.post("/create", (req, res) => {
+    if (req.session.auth === "authenticated") {
+        data.push({ user: req.session.email, title: req.body.title, due_by: req.body.date, filepath: "test", amount: parseFloat(req.body.amount), id: crypto.randomUUID()})
+        
+        updatedData = JSON.stringify(data, null, 2)
+        fs.writeFileSync("./public/data/data.json", updatedData)
+
+        res.status(200).redirect("/")
+    } else {
+        res.status(307).redirect("/login")
+    }
+})
+
+router.post("/save", (req, res) => {
+    if (req.session.auth === "authenticated") {
+        data = JSON.stringify(req.body)
+        console.log(data)
+    }
+
 })
 
 module.exports = router

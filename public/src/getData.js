@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 newSwitchButton.classList.add("btn", "btn-danger", "status")
                 newSwitch.appendChild(newSwitchButton)
 
-                newTableRow.appendChild(newID);
                 newTableRow.appendChild(newTitle);
                 newTableRow.appendChild(newDate);
                 newTableRow.appendChild(newAmount)

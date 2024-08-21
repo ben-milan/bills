@@ -2,18 +2,17 @@ const express = require("express")
 const session = require("express-session")
 const path = require("path")
 const SHA256 = require("crypto-js/sha256")
-const userCreds = require("../data/user_credentials.json")
-const webCode = require("../data/code.json")
+const userCreds = require("../public/data/user_credentials.json")
+const webCode = require("../public/data/code.json")
 const fs = require("fs")
 
 const loginPage = path.join(__dirname, "../web/login.html")
-const homePage = path.join(__dirname, "../web/index.html")
+const homePage = path.join(__dirname, "../views/index.ejs")
 const signupPage = path.join(__dirname, "../web/signup.html")
 const notauthPage = path.join(__dirname, "../web/not-authorized.html")
 
 const router = express.Router()
 
-router.use(express.static("public"))
 router.use(express.urlencoded({ extended: true }))
 router.use(express.json())
 
@@ -26,7 +25,7 @@ router.use(session({
 
 router.get("/", (req, res) => {
     if (req.session.auth === "authenticated") {
-        res.render("index", { email: req.session.email, pw: req.session.pw})
+        res.render(homePage, { email: req.session.email, pw: req.session.pw})
     } else {
         res.redirect("/login")
     }
