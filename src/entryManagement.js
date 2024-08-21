@@ -28,7 +28,7 @@ router.delete("/delete/:id", (req, res) => {
     if (idx !== -1) {
         data.splice(idx, 1)
         updatedData = JSON.stringify(data, null, 2)
-        fs.writeFileSync("./public/data/data.json", updatedData)
+        fs.writeFileSync("./bills/public/data/data.json", updatedData)
         res.status(200).json({Success: "Data deleted and updated successfully."})
     } else {
         res.status(404).send(`Data with id [${id}] has not been found.`)
@@ -48,7 +48,7 @@ router.post("/create", (req, res) => {
         data.push({ user: req.session.email, title: req.body.title, due_by: req.body.date, filepath: "test", amount: parseFloat(req.body.amount), id: crypto.randomUUID()})
         
         updatedData = JSON.stringify(data, null, 2)
-        fs.writeFileSync("./public/data/data.json", updatedData)
+        fs.writeFileSync("./bills/public/data/data.json", updatedData)
 
         res.status(200).redirect("/")
     } else {
