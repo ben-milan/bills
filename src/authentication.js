@@ -93,7 +93,7 @@ router.post("/signup", (req, res) => {
                 userCreds.push({ email: email, password: pw })
                 
                 updatedJson = JSON.stringify(userCreds, null, 2)
-                fs.writeFileSync("./bills/public/data/user_credentials.json", updatedJson)
+                fs.writeFileSync("./public/data/user_credentials.json", updatedJson)
 
                 res.status(200).redirect("/")
             } else {
