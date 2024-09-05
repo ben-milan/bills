@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const roundedTotal = total.toFixed(2);
             const newTotal = document.getElementById("total")
-            newTotal.innerHTML = `<strong><u>${roundedTotal}</u></strong>` 
+            newTotal.innerHTML = `<strong><u>${roundedTotal} CHF</u></strong>` 
         
     })
 })

@@ -171,6 +171,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.cancel-lk-pos {
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 .bill-btn-pos2 {
     margin: 0;
     position: absolute;
